@@ -11,7 +11,10 @@ def main():
     print("--------- Character Count -------")
     sort_list = stats.sort_chars(book)
     for dicts in sort_list:
-        print(f"{dicts['char']}: {dicts['num']}")
+        if dicts['char'].isalpha() == True:
+            print(f"{dicts['char']}: {dicts['num']}")
+        else:
+            continue
     print("============= END ===============")
 
 if __name__ == "__main__":
