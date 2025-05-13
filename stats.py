@@ -12,34 +12,7 @@ def get_word_count(book):
 
 def get_char_count(book):
     words = get_book_text(book).split()
-    chars = {
-        "a": 0,
-        "b": 0,
-        "c": 0,
-        "d": 0,
-        "e": 0,
-        "f": 0,
-        "g": 0,
-        "h": 0,
-        "i": 0,
-        "j": 0,
-        "k": 0,
-        "l": 0,
-        "m": 0,
-        "n": 0,
-        "o": 0,
-        "p": 0,
-        "q": 0,
-        "r": 0,
-        "s": 0,
-        "t": 0,
-        "u": 0,
-        "v": 0,
-        "w": 0,
-        "x": 0,
-        "y": 0,
-        "z": 0
-    }
+    chars = {}
     # Convert every word to lowercase:
     for index, word in enumerate(words):
         words[index] = word.lower()
@@ -47,4 +20,12 @@ def get_char_count(book):
         for char in word:
             if char in chars:
                 chars[char] += 1
+            else:
+                chars[char] = 1
     return chars
+
+def sort_chars(book):
+    chars_dict = get_char_count(book)
+    sorted = {}
+    for chars in chars_dict:
+        sorted[chars] = chars_dict[chars]
