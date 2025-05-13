@@ -8,7 +8,7 @@ def get_word_count(book):
     count = 0
     for word in words:
         count += 1
-    return f"{count} words found in the document"
+    return count
 
 def get_char_count(book):
     words = get_book_text(book).split()
