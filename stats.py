@@ -1,5 +1,5 @@
 def get_book_text(book):
-    with open(f"books/{book}.txt") as b:
+    with open(f"{book}.txt") as b:
         contents = b.read()
     return contents
 
