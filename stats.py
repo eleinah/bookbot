@@ -24,8 +24,6 @@ def get_char_count(book):
                 chars[char] = 1
     return chars
 
-def sort_on(dict):
-    return dict['num']
 
 def sort_chars(book):
     chars_dict = get_char_count(book)
@@ -36,5 +34,5 @@ def sort_chars(book):
         new_dict['char'] = chars
         new_dict['num'] = value
         sorted.append(new_dict)
-    sorted.sort(reverse=True, key=sort_on)
+    sorted.sort(reverse=True, key=lambda dict: dict["num"])
     return sorted
