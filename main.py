@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import stats
+from stats import get_word_count, sort_chars
 import sys
 
 def main():
@@ -12,11 +12,11 @@ def main():
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at books/{book}...")
     print("----------- Word Count ----------")
-    print(f"Found {stats.get_word_count(book)} total words")
+    print(f"Found {get_word_count(book)} total words")
     print("--------- Character Count -------")
-    sort_list = stats.sort_chars(book)
+    sort_list = sort_chars(book)
     for dicts in sort_list:
-        if dicts['char'].isalpha() == True:
+        if dicts['char'].isalpha():
             print(f"{dicts['char']}: {dicts['num']}")
         else:
             continue

@@ -6,7 +6,7 @@ def get_book_text(book):
 def get_word_count(book):
     words = get_book_text(book).split()
     count = 0
-    for word in words:
+    for _ in words:
         count += 1
     return count
 
@@ -27,12 +27,10 @@ def get_char_count(book):
 
 def sort_chars(book):
     chars_dict = get_char_count(book)
-    sorted = []
+    sorted_list = []
     for chars in chars_dict:
         value = chars_dict[chars]
-        new_dict = {}
-        new_dict['char'] = chars
-        new_dict['num'] = value
-        sorted.append(new_dict)
-    sorted.sort(reverse=True, key=lambda dict: dict["num"])
-    return sorted
+        new_dict = {'char': chars, 'num': value}
+        sorted_list.append(new_dict)
+    sorted_list.sort(reverse=True, key=lambda sort_on: sort_on["num"])
+    return sorted_list
